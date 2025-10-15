@@ -27,6 +27,7 @@ const registerUser = async (req, res) => {
         username: user.username,
         email: user.email,
         gender: user.gender,
+        role:user.role
       },
     });
   } catch (error) {
@@ -67,6 +68,7 @@ const loginUser=async(req,res)=>{
         username: userExist.username,
         email: userExist.email,
         gender: userExist.gender,
+        role:userExist.role
       },
     });
 

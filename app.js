@@ -29,14 +29,5 @@ app.use("/api/v1/users", userRouter)
 app.use("/api/v1/request", requestRouter)
 app.use("/api/v1/scheme",schemeRouter)
 app.use("/api/v1/activity",activityRouter)
-// app.use("/api/v1/tweets", tweetRouter)
-// app.use("/api/v1/subscriptions", subscriptionRouter)
-// app.use("/api/v1/videos", videoRouter)
-// app.use("/api/v1/comments", commentRouter)
-// app.use("/api/v1/likes", likeRouter)
-// app.use("/api/v1/playlist", playlistRouter)
-// app.use("/api/v1/dashboard", dashboardRouter)
-
-// http://localhost:8000/api/v1/users/register
 
 export { app }
