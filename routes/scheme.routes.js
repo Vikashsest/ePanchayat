@@ -5,7 +5,7 @@ import { verifyJWT } from "../middlewares/verifyJWT.js";
 const router = express.Router();
 
 
-router.use(verifyJWT);
+// router.use(verifyJWT);
 
 router.get("/", getSchemes);
 router.get("/:category", getSchemesByCategory);
