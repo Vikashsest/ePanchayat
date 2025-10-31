@@ -9,7 +9,7 @@ const app = express()
 //     credentials: true
 // }))
 app.use(cors({
-  origin:["https://panchayat-eight.vercel.app","http://localhost:3000","http://172.16.0.8:3000"], 
+  origin:["https://panchayat-eight.vercel.app","http://localhost:3000","http://172.16.0.8:3000","https://epanchayat-phi.vercel.app"], 
   credentials: true                
 }));
 app.use(express.json({limit: "16kb"}))
