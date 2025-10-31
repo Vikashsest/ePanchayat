@@ -1,6 +1,6 @@
 import RequestModel from "../model/Request.model.js";
 
-export const createRequest = async (req, res, next) => {
+export const createRequest = async (req, res) => {
   try {
     const { title, category, description } = req.body;
 
@@ -8,13 +8,13 @@ export const createRequest = async (req, res, next) => {
       title,
       category,
       description,
-      // userId: req.user._id, // from JWT
+     
     });
 
     await request.save();
-    res.status(201).json(request);
-  } catch (err) {
-    next(err);
+   return res.status(201).json(request);
+  } catch (error) {
+    return res.status(500).json({message:"Internal server error"},error.message)
   }
 };
 
