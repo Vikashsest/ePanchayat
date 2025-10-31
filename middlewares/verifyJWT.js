@@ -3,8 +3,7 @@ import { User } from "../model/user.model.js";
 
 export const verifyJWT = async (req, _, next) => {
   try {
-    const token =
-      req.cookies?.accessToken || req.header("Authorization")?.replace("Bearer ", "");
+    const token =  req.cookies?.accessToken || req.header("Authorization")?.replace("Bearer ", "");
  if (!token) {
       return res.status(401).json({ message: "Access token not provided" });
     }

@@ -12,7 +12,7 @@ const userSchema = new Schema(
       type: String,
       required: true,
       unique: true,
-      lowercase: true,  // fix typo
+      lowercase: true,  
       trim: true,
     },
     gender: {

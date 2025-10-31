@@ -6,7 +6,7 @@ const requestSchema = new mongoose.Schema({
   description: { type: String, required: true },
   status: { type: String, enum: ["Pending", "In Progress", "Resolved"], default: "Pending" },
   createdAt: { type: Date, default: Date.now },
-  userId: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true },
+  // userId: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true },
 });
 
 const Request = mongoose.model("Request", requestSchema);

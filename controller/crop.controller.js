@@ -1,6 +1,4 @@
-import Crop from "../models/Crop.js";
-
-// GET all crops
+import Crop from "../model/Crop.js";
 export const getCrops = async (req, res) => {
   try {
     const crops = await Crop.find();
@@ -10,7 +8,6 @@ export const getCrops = async (req, res) => {
   }
 };
 
-// POST new crop (Admin)
 export const createCrop = async (req, res) => {
   try {
     const { name, sowing, harvest, tips } = req.body;
@@ -24,7 +21,6 @@ export const createCrop = async (req, res) => {
   }
 };
 
-// PUT update crop (Admin)
 export const updateCrop = async (req, res) => {
   try {
     const { name, sowing, harvest, tips } = req.body;
@@ -39,8 +35,6 @@ export const updateCrop = async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 };
-
-// DELETE crop (Admin)
 export const deleteCrop = async (req, res) => {
   try {
     await Crop.findByIdAndDelete(req.params.id);
