@@ -24,6 +24,7 @@ import requestRouter from './routes/requests.routes.js'
 import schemeRouter from './routes/scheme.routes.js'
 import activityRouter from './routes/activity.routes.js'
 import router from "./routes/notice.route.js";
+import marquessRouter from "./routes/marquee.route.js"
 //routes declaration
 // app.use("/api/v1/healthcheck", healthcheckRouter)
 app.use("/api/v1/users", userRouter)
@@ -31,4 +32,5 @@ app.use("/api/v1/request", requestRouter)
 app.use("/api/v1/scheme",schemeRouter)
 app.use("/api/v1/activity",activityRouter)
 app.use("/api/v1",router)
+app.use("/api/v1",marquessRouter)
 export { app }
