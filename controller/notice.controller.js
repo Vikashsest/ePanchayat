@@ -1,5 +1,3 @@
-
-import noticeModel from '../model/notice.model.js';
 import notice from '../model/notice.model.js';
 
 export const createNotice = async (req, res) => {

@@ -8,12 +8,17 @@ const app = express()
 //     origin: process.env.CORS_ORIGIN,
 //     credentials: true
 // }))
+// app.use(cors({
+//   origin: ["https://panchayat-eight.vercel.app", "http://localhost:3000", "http://172.16.0.8:3000", "https://epanchayat-phi.vercel.app"],
+//   credentials: true
+// }));
 app.use(cors({
-  origin:["https://panchayat-eight.vercel.app","http://localhost:3000","http://172.16.0.8:3000","https://epanchayat-phi.vercel.app"], 
-  credentials: true                
+  origin: ["https://epanchayat.sestinfotech.com"], 
+  credentials: true
 }));
-app.use(express.json({limit: "16kb"}))
-app.use(express.urlencoded({extended: true, limit: "16kb"}))
+
+app.use(express.json({ limit: "16kb" }))
+app.use(express.urlencoded({ extended: true, limit: "16kb" }))
 app.use(express.static("public"))
 app.use(cookieParser())
 
@@ -25,12 +30,14 @@ import schemeRouter from './routes/scheme.routes.js'
 import activityRouter from './routes/activity.routes.js'
 import router from "./routes/notice.route.js";
 import marquessRouter from "./routes/marquee.route.js"
+import userdashboard from "./routes/user.dashboard.routes.js"
 //routes declaration
 // app.use("/api/v1/healthcheck", healthcheckRouter)
 app.use("/api/v1/users", userRouter)
 app.use("/api/v1/request", requestRouter)
-app.use("/api/v1/scheme",schemeRouter)
-app.use("/api/v1/activity",activityRouter)
-app.use("/api/v1",router)
-app.use("/api/v1",marquessRouter)
+app.use("/api/v1/scheme", schemeRouter)
+app.use("/api/v1/activity", activityRouter)
+app.use("/api/v1", router)
+app.use("/api/v1", marquessRouter)
+app.use("/api/v1",userdashboard)
 export { app }
